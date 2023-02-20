@@ -1,3 +1,5 @@
+package Main;
+
 public class Person {
     private String firstName;
     private String lastName;
@@ -47,5 +49,13 @@ public class Person {
     }
     public String getFulladresss() {
         return fulladresss;
+    }public void printPersonsAddress(){
+        System.out.println("----------------------------------------------------"+ "\n" +
+                "Contact Details For: " +getFirstName() +" "+ getLastName() + "\n" +
+                "Phone Number: " + getPhoneNumber() + "\n" +
+                "Email Address: " + getEmail()+ "\n" +
+                "Full Address: " + getFulladresss()+ "\n" +
+                "----------------------------------------------------"
+        );
     }
 }
