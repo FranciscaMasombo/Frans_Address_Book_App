@@ -5,14 +5,14 @@ public class Person {
     private String lastName;
     private String phoneNumber;
     private String email;
-    private String fulladresss;
+    private String fulladdresss;
 
-    public Person(String firstName, String lastName, String phoneNumber, String email, String fulladresss) {
+    public Person(String firstName, String lastName, String phoneNumber, String email, String fulladdresss) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.fulladresss = fulladresss;
+        this.fulladdresss = fulladdresss;
     }
 
 
@@ -44,17 +44,19 @@ public class Person {
         return email;
     }
 
-    public void setFulladresss(String fulladresss) {
-        this.fulladresss = fulladresss;
+    public void setFulladdresss(String fulladdresss) {
+        this.fulladdresss = fulladdresss;
     }
-    public String getFulladresss() {
-        return fulladresss;
-    }public void printPersonsAddress(){
+    public String getFulladdresss() {
+        return fulladdresss;
+    }
+
+    public void printPersonsAddress(){
         System.out.println("----------------------------------------------------"+ "\n" +
                 "Contact Details For: " +getFirstName() +" "+ getLastName() + "\n" +
                 "Phone Number: " + getPhoneNumber() + "\n" +
                 "Email Address: " + getEmail()+ "\n" +
-                "Full Address: " + getFulladresss()+ "\n" +
+                "Full Address: " + getFulladdresss()+ "\n" +
                 "----------------------------------------------------"
         );
     }

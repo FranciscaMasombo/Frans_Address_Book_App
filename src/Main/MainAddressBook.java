@@ -1,12 +1,15 @@
 package Main;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainAddressBook {
 
     public static void AddressBookMenu() {
+        System.out.println("******************************************");
+        System.out.println("*      ~ Address Book Menu ~             *");
+        System.out.println("******************************************");
         System.out.println("""
-                ~ Menu ~
                 [1] Add
                 [2] View all Contacts In Address Book
                 [3] Delete Contact info
@@ -16,21 +19,23 @@ public class MainAddressBook {
                 [7] Search By Last Name
                 [8] Sort By Last Name
                 [9] Exit App
-                Enter Your Choice ie. 1,2 or 3:"""
+                Enter Your Choice ie. 1,2 or ..:"""
         );
     }
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
 
         while (true) {
-            //method to be executed  to display options
+            //method to be executed to display Menu
             AddressBookMenu();
 
             // has a correct option been picked or else try again
             try {
                 int menuChoice = scanner.nextInt();
+                scanner.nextLine();
 
                 switch (menuChoice) {
                     case 1:
@@ -45,7 +50,6 @@ public class MainAddressBook {
                          * delete contact
                          * by need to find the contact by looking for the phone number
                          */
-
                         AddressBook.deleteAddress();
                         break;
                     case 4:
@@ -65,8 +69,9 @@ public class MainAddressBook {
                         AddressBook.sortByLastName();
                         break;
                 }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (InputMismatchException e) {
+                System.out.println("Lets Try Again");
+                scanner.nextLine();
             }
         }
 
