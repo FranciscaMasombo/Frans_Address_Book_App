@@ -106,7 +106,7 @@ public class AddressBook {
     public static void UpdatePhoneNumber() {
         System.out.println("Enter the Phone Number:");
         String phoneNumberEntered = scanner.nextLine();
-
+        boolean gotperson = false;
         for (int i =0;  i < address.size(); i++){
             Person person = address.get(i);
 
@@ -130,37 +130,41 @@ public class AddressBook {
                         String fname = scanner.next();
                         person.setFirstName(fname);
                         System.out.println("Person:" + person.getFirstName()+ " " + person.getLastName()+" you have sucessfully updated");
+                        gotperson = true;
                         break;
                     case 2:
                         System.out.println("Please enter the new Last Name :");
                         String lname = scanner.next();
                         person.setLastName(lname);
                         System.out.println("Person:" + person.getFirstName()+ " " +person.getLastName()+" you have sucessfully updated");
+                        gotperson = true;
                         break;
                     case 3:
                         System.out.println("Please enter the new Phone Number :");
                         String phoneNumber = scanner.next();
                         person.setPhoneNumber(phoneNumber);
                         System.out.println("Person:" + person.getFirstName()+ " " +person.getLastName()+" you have sucessfully updated");
+                        gotperson = true;
                         break;
                     case 4:
                         System.out.println("Please enter the new Email:");
                         String email = scanner.next();
                         person.setEmail(email);
                         System.out.println("Person:" + person.getFirstName()+ " " + person.getLastName()+" you have sucessfully updated");
+                        gotperson = true;
                         break;
                     case 5:
                         System.out.println("Please enter the new Full Address :");
                         String fullAddress = scanner.next();
                         person.setFulladdresss(fullAddress);
                         System.out.println("Person:" + person.getFirstName()+ person.getLastName()+" you have sucessfully updated");
+                        gotperson = true;
                         break;
                 }
                 System.out.println("Address Book Updated Successfully");
-            }else {
-                System.out.println("Address Book Not Updated");
-
             }
+        }if (!gotperson){
+            System.out.println("Address Book Not Updated");
         }
 
     }
