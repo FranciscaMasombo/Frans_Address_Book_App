@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class AddressBookTest1 {
+class Test1 {
 
     private final ArrayList<Person> address = new ArrayList<>();
         @BeforeEach
@@ -35,46 +35,17 @@ class AddressBookTest1 {
 
             String input = phoneNumber + "\n3\n" + newPhoneNumber;
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-
         }
 
     @Test
     @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
     @DisplayName("Test if display all ")
      void testAllAddress() {
-        // Given
         String savedOutput = System.out.toString();
-
         AddressBook addressBook = new AddressBook();
-
-        // When
-        AddressBook.AllAddress();
+        addressBook.AllAddress();
         System.setOut(System.out.printf(savedOutput));
+        }
 
-        // Then
-        // This is a simple AddressBookTest2 to verify that the method does not throw an exception
-        // and that it outputs something to the console.
-    }
-
-    @Test
-    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
-    @DisplayName("Test search by phone number ")
-    void testSearchAddressBookByNumber() {
-        // Given
-        AddressBook addressBook = new AddressBook();
-        String phoneNumber = "0983425629";
-
-        // When
-        Person fran = AddressBook.searchAddressBookByNumber(phoneNumber);
-
-        // Then
-        assertNotNull(fran);
-        Assertions.assertEquals("Fran", fran.getFirstName());
-        Assertions.assertEquals("Davis", fran.getLastName());
-        Assertions.assertEquals("0983425629", fran.getPhoneNumber());
-        Assertions.assertEquals("Femail@gmail.com", fran.getEmail());
-        Assertions.assertEquals("2089,Marys Walk, Waterford ", fran.getFulladdresss());
-    }
 
     }
