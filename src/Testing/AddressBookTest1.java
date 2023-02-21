@@ -41,7 +41,7 @@ class AddressBookTest1 {
 
     @Test
     @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
-    @DisplayName("Test if display all People")
+    @DisplayName("Test if display all ")
      void testAllAddress() {
         // Given
         String savedOutput = System.out.toString();
